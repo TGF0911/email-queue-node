@@ -26,7 +26,7 @@ function sendMail(message: AWS.SQS.Message) {
     from: '',
     to: sqsMessage.userEmail,
     subject: 'Order Received | NodeShop',
-    html: `<p>Hi ${sqsMessage.userEmail}.</p. <p>Your order of ${sqsMessage.itemQuantity} ${sqsMessage.itemName} has been received and is being processed.</p> <p> Thank you for shopping with us! </p>`,
+    html: `<p>Hi ${sqsMessage.userEmail}.</p> <p>Your order of ${sqsMessage.itemQuantity} ${sqsMessage.itemName} has been received and is being processed.</p> <p> Thank you for shopping with us! </p>`,
   };
 
   transport.sendMail(emailMessage);
